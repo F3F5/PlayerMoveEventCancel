@@ -1,0 +1,3 @@
+name: PlayerMoveEventCancel
+version: '${project.version}'
+main: f3f5.playermoveeventcancel.PlayerMoveEventCancel
