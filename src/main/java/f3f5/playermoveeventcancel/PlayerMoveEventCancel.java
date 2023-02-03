@@ -20,8 +20,8 @@ public class PlayerMoveEventCancel extends JavaPlugin implements Listener {
     public void onMove(PlayerMoveEvent event) {
         Player player = event.getPlayer();
         if (player.getWorld().getName().toLowerCase().contains("world")) {
-            if(player.getLocation().getBlockY() < 900){
-                player.teleport(new Location(player.getWorld(), 0, 1000, 0));
+//             if(player.getLocation().getBlockY() < 900){
+//                 player.teleport(new Location(player.getWorld(), 0, 1000, 0));
             }
 //            player.setWalkSpeed(0F);
             player.setFlySpeed(0F);
@@ -35,10 +35,13 @@ public class PlayerMoveEventCancel extends JavaPlugin implements Listener {
         player.setHealth(player.getMaxHealth());
 //        player.setWalkSpeed(0.2F);
     }
-        @EventHandler
-        public void onDamage(EntityDamageByEntityEvent event) {
+     @EventHandler
+    public void onDamage(EntityDamageByEntityEvent event) {
             if(event.getEntity().getWorld().getName().toLowerCase().contains("world")) {
                 event.setCancelled(true);
-            }
-        }
+//     }
+//     @EventHandler
+//     public void onJoin(PlayerJoinEvent event) {
+//         Bukkit.getScheduler().scheduleSyncDelayedTask(this, ()  -> event.getPlayer().teleport(new Location(Bukkit.getWorld("world"), 0, 70, 27)), 100);
+    }
 }
